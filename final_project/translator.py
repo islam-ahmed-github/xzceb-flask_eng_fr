@@ -17,8 +17,10 @@ language_translator.set_service_url(api_url )
 
 
 def Translate_en_to_fr(enstr):
-  return language_translator.translate(enstr,'fr-it').get_result()
+  enfr = language_translator.translate(text=enstr,model_id='en-fr').get_result()
+  return  enfr.get('translation')[0].get('translation')
 
 
 def Translate_fr_to_en(frstr):
-  return language_translator.translate(frstr,'en-it').get_result()
+   fren = language_translator.translate(text=frstr,'fr-en').get_result()
+   return fren.get('translation')[0].get('translation')
