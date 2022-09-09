@@ -17,7 +17,7 @@ def frenchToEnglish():
 
 @app.route("/")
 def renderIndexPage():
-    return "ibm-translation-server-by-islam-ahmed"
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
